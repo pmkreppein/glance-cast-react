@@ -10,7 +10,7 @@ import ForecastDetail from './ForecastDetail';
 import FullDetail from './FullDetail'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import Navbar from './Navbar';
-import WeatherMapSlider from './WeatherMapSlider';
+
 
 class App extends Component {
   componentDidMount(){
