@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {connect} from 'react-redux';
-import {fetchWeather} from "./actions"
+import {fetchWeather, fetchCities} from "./actions"
 import {bindActionCreators} from 'redux';
 import WeatherSnippet from './WeatherSnippet';
 import Temperature from './Temperature'
@@ -15,22 +14,28 @@ import Navbar from './Navbar';
 class App extends Component {
   componentDidMount(){
     this.props.fetchWeather();
-
+    this.props.fetchCities();
+    
   }
 
   render() {
+    console.log(this.props.cities)
 
     return (
         <Router>
         <div className="container">
         <Navbar />
         
+        
         <Route exact={true} path="/" render={() => (
+            <div>{this.props.cities ? (this.props.cities.map(city => <a href={"/weather/" + city.latlong} className="button ">{city.name}</a>)) : (<p>Loading...</p>)}
             <div className="columns">
             <div className="column"><WeatherSnippet {...this.props.weather.currently} tempUnit={this.props.tempUnit} cityName="New York" cityImage="https://amp.businessinsider.com/images/5ad8ae04cd862425008b4898-750-563.jpg"/></div>
             {/* <div className="column"><WeatherSnippet {...this.props.weather.currently} tempUnit={this.props.tempUnit}/></div>
             <div className="column"><WeatherSnippet {...this.props.weather.currently} tempUnit={this.props.tempUnit}/></div> */}
-          </div>)}/>
+          </div>
+          </div>
+          )}/>
 
         <Route exact={true} path="/day-details" render={() => (
           <div>
@@ -68,13 +73,15 @@ class App extends Component {
 function mapStateToProps(state){
   return {
     weather: state.weather,
-    tempUnit: state.tempUnit
+    tempUnit: state.tempUnit,
+    cities: state.cities
   }
 }
 
 function mapDispatchToProps(dispatch){
   return {
-    fetchWeather: bindActionCreators(fetchWeather, dispatch)
+    fetchWeather: bindActionCreators(fetchWeather, dispatch),
+    fetchCities: bindActionCreators(fetchCities, dispatch)
   }
 }
 

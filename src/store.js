@@ -5,7 +5,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 const initialState = {
   weather: [],
-  tempUnit: 'F',
+  metricMode: false,
+  cities: [],
   error: ""
 }
 

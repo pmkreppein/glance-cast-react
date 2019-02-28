@@ -12,3 +12,16 @@ export function fetchWeather(){
         })
       }
   }
+
+
+  export function fetchCities(){
+    return function(dispatch){
+        axios.get("https://glance-cast.herokuapp.com/cities")
+        .then((response) => {
+          dispatch({type: 'GET_CITIES', payload: response.data })
+        })
+          .catch((err) => {
+            dispatch({type: "ERROR", payload: err})
+          })
+        }
+    }
