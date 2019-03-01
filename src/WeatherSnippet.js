@@ -53,13 +53,7 @@ function WeatherSnippet(props){
     </table>
           </div>
         </div>
-        <footer className="card-footer">
-        <Link className="card-footer-item" to={'/day-details'}>{'Current Details'}</Link>
-        <Link className="card-footer-item" to={'/extended'}>{'Extended Forecast'}</Link>
-    {/* <a href="#" className="card-footer-item">Details</a>
-    <a href="#" className="card-footer-item">Day Forecast</a>
-    <a href="#" className="card-footer-item">Long Range</a> */}
-  </footer>
+
       </div>
     )
 }

@@ -11,10 +11,11 @@ import ForecastDetail from './ForecastDetail';
 
   
    render() {
-    console.log(this.props.match.params)
+    
     return (
       <div>
-        <WeatherSnippet {...this.props.weather.currently} metricMode={this.props.metricMode}/>
+        <WeatherSnippet {...this.props.weather.currently} metricMode={this.props.metricMode} cityName={this.props.match.params.name}/>
+        <ForecastDetail {...this.props.weather.daily} metricMode={this.props.metricMode} />
       </div>
     )
   }
