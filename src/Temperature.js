@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 function Temperature(props){
     let temp;
-
-    if (props.unit === "F"){
+    let unit;
+    if (!props.metricMode){
         temp = Math.round(props.temp)
+        unit = "F"
     }
-    else if (props.unit === "C"){
+    else if (props.metricMode){
         temp = Math.round((props.temp - 32) * (5/9)) 
+        unit = "C"
     }
     
     return(
-        <div><p>{temp}<span>&#176;</span> {props.unit}</p></div>
+        <div><p>{temp}<span>&#176;</span> {unit}</p></div>
     )
 }
 export default Temperature

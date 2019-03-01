@@ -12,7 +12,7 @@ export default function ForecastDetailRow(props) {
       <tr >
           <td><Moment unix format="dddd">{props.time}</Moment></td>
           <td><WeatherEmoji icon={props.icon}/></td>
-          <td><TempBug high={props.temperatureHigh} low={props.temperatureLow} unit={props.tempUnit} /></td>
+          <td><TempBug high={props.temperatureHigh} low={props.temperatureLow} metricMode={props.metricMode} /></td>
           <td><SunBug sunrise={props.sunriseTime} sunset={props.sunsetTime} /></td>
           <td>{Math.round(props.windSpeed)}</td>
           <td>{props.pressure}</td>

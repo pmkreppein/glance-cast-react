@@ -40,7 +40,7 @@ export default function ForecastDetail(props) {
         </tr>
       </thead>
       <tbody>
-  {props.data ? (props.data.map(day => <ForecastDetailRow {...day} tempUnit={props.tempUnit} />)) : (<p>Loading...</p>)}
+  {props.data ? (props.data.map(day => <ForecastDetailRow {...day} metricMode={props.metricMode} />)) : (<p>Loading...</p>)}
       </tbody>
     </table>
     </div>

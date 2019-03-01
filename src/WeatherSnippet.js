@@ -24,7 +24,7 @@ function WeatherSnippet(props){
       <div className="media-content">
       <p className="title is-4">{props.cityName}</p>
       <div className="tags has-addons">
-              <span className="tag is-medium is-info"><Temperature temp={props.temperature} unit={props.tempUnit}/></span>
+              <span className="tag is-medium is-info"><Temperature temp={props.temperature} metricMode={props.metricMode}/></span>
               <span className="tag is-medium is-dark">{props.summary}</span>
               </div>
       </div>
@@ -36,7 +36,7 @@ function WeatherSnippet(props){
         <tr>
           <td>Feels Like</td>
           <td>
-          <Temperature temp={props.apparentTemperature} unit={props.tempUnit} /></td>
+          <Temperature temp={props.apparentTemperature} metricMode={props.metricMode} /></td>
         </tr>
         <tr>
           <td>Wind</td>

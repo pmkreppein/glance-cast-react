@@ -28,8 +28,8 @@ class App extends Component {
         <Router>
         <div className="container">
         <Navbar cities={this.props.cities}/>
-        <button onClick={this.handleOnClick} className="is-primary button"> Metric Mode: {this.props.metricMode} </button> 
-        
+        <button onClick={this.handleOnClick} className="is-primary button"> Metric Mode: {this.props.metricMode ? 'On' : 'Off'} </button> 
+        <WeatherSnippet {...this.props.weather.currently} metricMode={this.props.metricMode}/>
         <Route exact={true} path="/" render={() => (
            <div>
 
