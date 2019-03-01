@@ -5,9 +5,9 @@ export default function reducer(state, action){
     case "GET_WEATHER":{
       return {...state, weather: action.payload}
     }
-    case "GET_CITIES":{
-      return {...state, cities: action.payload}
-    }
+    // case "GET_CITIES":{
+    //   return {...state, cities: action.payload}
+    // }
     case "SWAP_METRIC_MODE":{
       return {
         ...state,

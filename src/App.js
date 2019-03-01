@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {connect} from 'react-redux';
-import {fetchWeather, fetchCities, swapMetric} from "./actions"
+import {fetchWeather, swapMetric} from "./actions"
 import {bindActionCreators} from 'redux';
 import WeatherSnippet from './WeatherSnippet';
 import Temperature from './Temperature'
@@ -13,7 +13,6 @@ import Store from './store';
 class App extends Component {
   componentDidMount(){
     this.props.fetchWeather("29.7604,-95.3689");
-    this.props.fetchCities();
     console.log(this.props.metricMode)
     
   }
@@ -78,7 +77,6 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
   return {
     fetchWeather: bindActionCreators(fetchWeather, dispatch),
-    fetchCities: bindActionCreators(fetchCities, dispatch),
     swapMetric: () => {
       dispatch(swapMetric())
     }
