@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
-import {fetchCities} from './actions';
 import {bindActionCreators} from 'redux';
 class Navbar extends Component {
 
@@ -73,11 +72,4 @@ function mapStateToProps(state){
   }
 }
 
-function mapDispatchToProps(dispatch){
-  return {
-   
-    fetchCities: bindActionCreators(fetchCities, dispatch),
-
-  }
-}
 export default connect(mapStateToProps, null)(Navbar);
