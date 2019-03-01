@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import CityButton from './CityButton';
- class Navbar extends Component {
+import {connect} from 'react-redux';
+import {fetchCities} from './actions';
+import {bindActionCreators} from 'redux';
+class Navbar extends Component {
 
   render() {
     return (
@@ -30,7 +32,17 @@ import CityButton from './CityButton';
         </a>
         
         <div className="navbar-dropdown">
-        {this.props.cities.map(city => <CityButton latlong={city.latlong} name={city.name}/>)}
+        <a href="/weather/New York City/40.7624,-73.9738" className="navbar-item">New York City</a>
+        <a href="/weather/Los Angeles/33.9780,-118.4671" className="navbar-item">Los Angeles</a>
+        <a href="/weather/Chicago/41.8887,-87.6264" className="navbar-item">Chicago</a>
+        <a href="/weather/Houston/29.7604,-95.3689" className="navbar-item">Houston</a>
+        <a href="/weather/Phoenix/33.4452,-112.0668" className="navbar-item">Phoenix</a>
+        <a href="/weather/Philadelphia/39.9491,-75.1506" className="navbar-item">Philadelphia</a>
+        <a href="/weather/San Antonio/29.4241,-98.4924" className="navbar-item">San Antonio</a>
+        <a href="/weather/San Diego/34.0194,-118.4108" className="navbar-item">San Diego</a>
+        <a href="/weather/Dallas/32.7472,-97.0926" className="navbar-item">Dallas</a>
+        <a href="/weather/Austin/30.3039,-97.7544" className="navbar-item">Austin</a>
+        <a href="/weather/Jacksonville/30.3369,-81.6616" className="navbar-item">Jacksonville</a>
         </div>
       </div>
     </div>
@@ -55,4 +67,17 @@ import CityButton from './CityButton';
   }
 }
 
-export default Navbar;
+function mapStateToProps(state){
+  return {
+    cities: state.cities
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+   
+    fetchCities: bindActionCreators(fetchCities, dispatch),
+
+  }
+}
+export default connect(mapStateToProps, null)(Navbar);

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function CityButton(props) {
   return (
-    <a href={"weather/" + props.latlong} className="navbar-item">
+    <a href={"" + props.latlong + "/" + props.name} className="navbar-item">
         {props.name}
     </a>
   )

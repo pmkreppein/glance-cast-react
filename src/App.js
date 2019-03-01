@@ -9,7 +9,6 @@ import ForecastDetail from './ForecastDetail';
 import FullDetail from './FullDetail'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import Navbar from './Navbar';
-import CityButton from './CityButton';
 import Store from './store';
 class App extends Component {
   componentDidMount(){
@@ -27,7 +26,7 @@ class App extends Component {
      return (
         <Router>
         <div className="container">
-        <Navbar cities={this.props.cities}/>
+        <Navbar/>
         <button onClick={this.handleOnClick} className="is-primary button"> Metric Mode: {this.props.metricMode ? 'On' : 'Off'} </button> 
         <WeatherSnippet {...this.props.weather.currently} metricMode={this.props.metricMode}/>
         <Route exact={true} path="/" render={() => (
@@ -72,7 +71,6 @@ function mapStateToProps(state){
   return {
     weather: state.weather,
     tempUnit: state.tempUnit,
-    cities: state.cities,
     metricMode: state.metricMode,
   }
 }
