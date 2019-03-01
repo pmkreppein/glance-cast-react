@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import CityButton from './CityButton';
  class Navbar extends Component {
 
   render() {
@@ -20,40 +20,17 @@ import React, { Component } from 'react'
 
   <div id="navbarBasicExample" className="navbar-menu">
     <div className="navbar-start">
-      <a className="navbar-item">
-        Weather for Your Location
+      <a href="/nation-overview" className="navbar-item">
+        NWS Nation Overview
       </a>
 
       <div className="navbar-item has-dropdown is-hoverable">
         <a className="navbar-link">
           Cities
         </a>
-
+        
         <div className="navbar-dropdown">
-          <a className="navbar-item">
-            New York
-          </a>
-          <a className="navbar-item">
-            Boston
-          </a>
-          <a className="navbar-item">
-            Washington DC
-          </a>
-          <a className="navbar-item">
-            Denver
-          </a>
-          <a className="navbar-item">
-            Louisville, KY
-          </a>
-          <a className="navbar-item">
-            Kansas City, MO
-          </a>
-          <a className="navbar-item">
-            Fairbanks, AK
-          </a>
-          <a className="navbar-item">
-            Honolulu, HI
-          </a>
+        {this.props.cities.map(city => <CityButton latlong={city.latlong} name={city.name}/>)}
         </div>
       </div>
     </div>

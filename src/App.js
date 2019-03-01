@@ -9,7 +9,7 @@ import ForecastDetail from './ForecastDetail';
 import FullDetail from './FullDetail'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import Navbar from './Navbar';
-
+import CityButton from './CityButton';
 
 class App extends Component {
   componentDidMount(){
@@ -19,16 +19,14 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.cities)
-
-    return (
+     return (
         <Router>
         <div className="container">
-        <Navbar />
+        <Navbar cities={this.props.cities}/>
         
         
         <Route exact={true} path="/" render={() => (
-            <div>{this.props.cities ? (this.props.cities.map(city => <a href={"/weather/" + city.latlong} className="button ">{city.name}</a>)) : (<p>Loading...</p>)}
+            <div>
             <div className="columns">
             <div className="column"><WeatherSnippet {...this.props.weather.currently} tempUnit={this.props.tempUnit} cityName="New York" cityImage="https://amp.businessinsider.com/images/5ad8ae04cd862425008b4898-750-563.jpg"/></div>
             {/* <div className="column"><WeatherSnippet {...this.props.weather.currently} tempUnit={this.props.tempUnit}/></div>
