@@ -5,11 +5,16 @@ import {bindActionCreators} from 'redux';
 import WeatherSnippet from './WeatherSnippet';
 import ForecastDetail from './ForecastDetail';
  class MasterForecast extends Component {
-  render() {
-      console.log(this.props.params)
+    componentDidMount(){
+        this.props.fetchWeather(this.props.match.params.latlong);
+    }
+
+  
+   render() {
+    console.log(this.props.match.params)
     return (
       <div>
-        
+        <WeatherSnippet {...this.props.weather.currently} metricMode={this.props.metricMode}/>
       </div>
     )
   }

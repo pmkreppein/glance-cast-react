@@ -12,13 +12,14 @@ import Navbar from './Navbar';
 import MasterForecast from './MasterForecast';
 class App extends Component {
   componentDidMount(){
-    this.props.fetchWeather("29.7604,-95.3689");
+    // this.props.fetchWeather("29.7604,-95.3689");
     console.log(this.props.metricMode)
     
   }
 
 
   handleOnClick = event => {
+    event.preventDefault();
     this.props.swapMetric()
   }
   render() {
@@ -27,18 +28,14 @@ class App extends Component {
         <div className="container">
         <Navbar/>
         <button onClick={this.handleOnClick} className="is-primary button"> Metric Mode: {this.props.metricMode ? 'On' : 'Off'} </button> 
-        <WeatherSnippet {...this.props.weather.currently} metricMode={this.props.metricMode}/>
+        
         <Route exact={true} path="/" render={() => (
            <div>
 
            </div>
          )}/>
 
-        <Route exact={true} path="/:name/:latlong" render={() => (
-          <div>
-              <MasterForecast />
-          </div>
-        )} />
+        <Route exact={true} path="/weather/:name/:latlong" component={MasterForecast} />
 
         <Route exact={true} path="/extended" render={() => (
           <div>
