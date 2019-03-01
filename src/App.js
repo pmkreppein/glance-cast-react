@@ -9,7 +9,7 @@ import ForecastDetail from './ForecastDetail';
 import FullDetail from './FullDetail'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import Navbar from './Navbar';
-import Store from './store';
+import MasterForecast from './MasterForecast';
 class App extends Component {
   componentDidMount(){
     this.props.fetchWeather("29.7604,-95.3689");
@@ -34,9 +34,9 @@ class App extends Component {
            </div>
          )}/>
 
-        <Route exact={true} path="/day-details" render={() => (
+        <Route exact={true} path="/:name/:latlong" render={() => (
           <div>
-
+              <MasterForecast />
           </div>
         )} />
 
