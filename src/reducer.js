@@ -8,6 +8,13 @@ export default function reducer(state, action){
     case "GET_CITIES":{
       return {...state, cities: action.payload}
     }
+    case "SWAP_METRIC_MODE":{
+      return {
+        ...state,
+        metricMode: !state.metricMode
+      }
+    }
+
     case "ERROR": {
       return {...state, error: action.payload}
     }

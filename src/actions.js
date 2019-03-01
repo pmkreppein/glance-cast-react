@@ -25,3 +25,9 @@ export function fetchWeather(){
           })
         }
     }
+
+    export function swapMetric(){
+      return function(dispatch){
+            dispatch({type: 'SWAP_METRIC_MODE'})     
+          }
+      }
