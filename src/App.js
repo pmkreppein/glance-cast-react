@@ -27,8 +27,7 @@ class App extends Component {
         <Router>
         <div className="container">
         <Navbar/>
-        <button onClick={this.handleOnClick} className="is-primary button"> Metric Mode: {this.props.metricMode ? 'On' : 'Off'} </button> 
-        
+        <br/>
         <Route exact={true} path="/" render={() => (
            <div>
 
