@@ -8,11 +8,6 @@ function WeatherSnippet(props){
 
     return(
         <div className="card">
-        <div class="card-image">
-         <figure class="image is-4by3">
-           <img src={props.cityImage} alt="Placeholder image"/>
-         </figure>
-       </div>
 
   <div className="card-content">
     <div className="media">

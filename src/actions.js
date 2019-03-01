@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 
-export function fetchWeather(){
+export function fetchWeather(latlong){
   return function(dispatch){
-      axios.get("https://glance-cast.herokuapp.com/")
+      axios.get("https://glance-cast.herokuapp.com/forecast/" + latlong)
       .then((response) => {
         dispatch({type: 'GET_WEATHER', payload: response.data })
       })

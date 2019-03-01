@@ -13,7 +13,7 @@ import CityButton from './CityButton';
 import Store from './store';
 class App extends Component {
   componentDidMount(){
-    this.props.fetchWeather();
+    this.props.fetchWeather("29.7604,-95.3689");
     this.props.fetchCities();
     console.log(this.props.metricMode)
     
