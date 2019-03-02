@@ -27,7 +27,7 @@ class Navbar extends Component {
               <div className="dropdown is-hoverable">
                 <div className="dropdown-trigger">
                   <button className="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                    <span>Cities</span>
+                    <span>City Forecasts</span>
                     <span className="icon is-small">v</span>
                   </button>
                 </div>

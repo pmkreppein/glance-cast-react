@@ -30,7 +30,8 @@ class App extends Component {
         <br/>
         <Route exact={true} path="/" render={() => (
            <div>
-
+            <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day1.png" />
+          <br/>
            </div>
          )}/>
 
