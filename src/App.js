@@ -3,10 +3,7 @@ import './App.css';
 import {connect} from 'react-redux';
 import {fetchWeather, swapMetric} from "./actions"
 import {bindActionCreators} from 'redux';
-import WeatherSnippet from './WeatherSnippet';
-import Temperature from './Temperature'
 import ForecastDetail from './ForecastDetail';
-import FullDetail from './FullDetail'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import Navbar from './Navbar';
 import MasterForecast from './MasterForecast';
