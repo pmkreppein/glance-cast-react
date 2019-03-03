@@ -16,12 +16,11 @@ export default function FullDetail(props) {
         
       
         {Object.keys(props).map(key => (
-    <tr>
+      <tr>
           <td>{key}</td>
           <td>{props[key]}</td>
         </tr>
  ))}
-
       </tbody>
     </table>
     

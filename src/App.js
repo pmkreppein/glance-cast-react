@@ -10,6 +10,7 @@ import FullDetail from './FullDetail'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import Navbar from './Navbar';
 import MasterForecast from './MasterForecast';
+import Welcome from './Welcome';
 class App extends Component {
   componentDidMount(){
     // this.props.fetchWeather("29.7604,-95.3689");
@@ -25,39 +26,39 @@ class App extends Component {
   render() {
      return (
         <Router>
-        <div className="container">
-        <Navbar/>
-        <br/>
+          <div className="container">
+            <Navbar/>
+            <br/>
+        
         <Route exact={true} path="/" render={() => (
            <div>
-            <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day1.png" />
-          <br/>
+
+              <Welcome />
+              <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day1.png" />
+            <br/>
            </div>
          )}/>
 
         <Route exact={true} path="/weather/:name/:latlong" component={MasterForecast} />
 
         <Route exact={true} path="/extended" render={() => (
-          <div>
-          <ForecastDetail {...this.props.weather.daily} tempUnit={this.props.tempUnit} />
-          </div>
+            <div>
+              <ForecastDetail {...this.props.weather.daily} tempUnit={this.props.tempUnit} />
+            </div>
         )} />
           
           <Route exact={true} path="/nation-overview" render={() => (
-          <div>
-        <h2>National Weather Service Overview:</h2>
-        <div class="image">
-          <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day1.png" />
-          <br/>
-          <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day2.png" />
-          <br/>
-          <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day3.png" />
-        </div>
-          </div>
+            <div>
+              <h2>National Weather Service Overview:</h2>
+              <div class="image">
+                <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day1.png" />
+                <br/>
+                <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day2.png" />
+                <br/>
+                <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day3.png" />
+               </div>
+              </div>
         )} />
-
-
-
         </div>
         </Router>
     );

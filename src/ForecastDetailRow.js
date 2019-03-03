@@ -15,9 +15,7 @@ export default function ForecastDetailRow(props) {
           <td><TempBug high={props.temperatureHigh} low={props.temperatureLow} metricMode={props.metricMode} /></td>
           <td><SunBug sunrise={props.sunriseTime} sunset={props.sunsetTime} /></td>
           <td>{Math.round(props.windSpeed)}</td>
-          <td>{props.pressure}</td>
-        
-
+          <td>{props.pressure}</td>    
       </tr>
 
 
