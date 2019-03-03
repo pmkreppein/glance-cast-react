@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {fetchWeather, swapMetric} from "./actions"
 import {bindActionCreators} from 'redux';
 import ForecastDetail from './ForecastDetail';
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Navbar from './Navbar';
 import MasterForecast from './MasterForecast';
 import Welcome from './Welcome';
@@ -31,7 +31,7 @@ class App extends Component {
            <div>
 
               <Welcome />
-              <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day1.png" />
+              <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day1.png" alt="Day 1 NWS Nation Overview" />
             <br/>
            </div>
          )}/>
@@ -48,11 +48,11 @@ class App extends Component {
             <div>
               <h2>National Weather Service Overview:</h2>
               <div class="image">
-                <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day1.png" />
+                <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day1.png" alt="Day 1 NWS Nation Overview"/>
                 <br/>
-                <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day2.png" />
+                <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day2.png" alt="Day 2 NWS Nation Overview"/>
                 <br/>
-                <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day3.png" />
+                <img src="https://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day3.png" alt="Day 3 NWS Nation Overview"/>
                </div>
               </div>
         )} />
