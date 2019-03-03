@@ -3,8 +3,7 @@ import WeatherEmoji from './WeatherEmoji'
 import Moment from 'react-moment';
 import TempBug from './TempBug'
 import SunBug from './SunBug';
-import FullDetail from './FullDetail'
-import Collapsible from 'react-collapsible';
+
 export default function ForecastDetailRow(props) {
   console.log(props);
   return (
