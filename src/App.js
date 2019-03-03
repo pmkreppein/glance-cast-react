@@ -9,12 +9,6 @@ import Navbar from './Navbar';
 import MasterForecast from './MasterForecast';
 import Welcome from './Welcome';
 class App extends Component {
-  componentDidMount(){
-    this.props.fetchWeather("29.7604,-95.3689");
-    console.log(this.props.metricMode)
-    
-  }
-
 
   handleOnClick = event => {
     event.preventDefault();
