@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
-import {fetchWeather, swapMetric} from "./actions"
+import {fetchWeather} from "./actions"
 import {bindActionCreators} from 'redux';
 import WeatherSnippet from './WeatherSnippet';
 import ForecastDetail from './ForecastDetail';
