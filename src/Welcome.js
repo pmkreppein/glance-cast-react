@@ -17,7 +17,7 @@ export default function Welcome() {
         <p>For three days of forecast maps like the one below, click <a href="/nation-overview">NWS Nation Overview.</a>  Select the city from the City Forecasts dropdown for detailed weather.  Toggle
         between Farenheit and Celsius by clicking on the "Metric Mode" button.
         </p>
-
+        <p><strong>If data does not load, click <a href="https://glance-cast.herokuapp.com/" target="new">here, </a>and then come back to this site.</strong></p>
         
     </div>
 
