@@ -1,6 +1,5 @@
 import React from 'react'
 import ForecastDetailRow from './ForecastDetailRow';
-import WeatherEmoji from './WeatherEmoji'
 import {Link} from 'react-router-dom';
 export default function ForecastDetail(props) {
 
