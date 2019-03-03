@@ -2,7 +2,7 @@ import React from 'react'
 import Temperature from './Temperature'
 import Wind from './Wind'
 import WeatherEmoji from './WeatherEmoji';
-import {Link} from 'react-router-dom';
+
 function WeatherSnippet(props) {
 
     return (
